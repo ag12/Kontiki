@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="solid_red">#fff00000</color>
+    <color name="cyan"> #E0FFFF</color>
+    <color name="golden">#C8B560</color>
+    <color name="steelblue">#5CB3FF</color>
+    <color name="rutes">#FFFFFF</color>
+    <color name="maroon">#F535AA</color>
+    <color name="toshic"> #52F3FF</color>
+    <color name="deepSky">#38ACEC</color>
+    <color name="deepSky2">#3BB9FF</color>
+    <color name="lightSky">#ADDFFF</color>
+    <color name="lightGrey">#413E3E</color>
+
+</resources>
