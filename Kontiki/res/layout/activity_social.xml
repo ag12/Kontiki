@@ -11,6 +11,16 @@
         android:orientation="vertical"
         android:paddingBottom="62dp" >
 
+        <TextView 
+            android:id="@+id/textview_newsfeed"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/activity_social_textview"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
         <ListView
             android:id="@+id/list2"
             android:layout_width="match_parent"
