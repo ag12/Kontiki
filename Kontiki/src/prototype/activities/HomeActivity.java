@@ -3,6 +3,8 @@ package prototype.activities;
 import prototype.adapter.KontikiArrayadapter;
 import prototype.start.R;
 import android.app.Activity;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
@@ -34,4 +36,11 @@ public class HomeActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_tab_host, menu);
 		return true;
 	}
+	
+	 @Override
+	    public void onConfigurationChanged(Configuration  newConfig) {
+	      super.onConfigurationChanged(newConfig);
+	      Intent flipped = new Intent(this, HomeFlippedActivity.class);
+	      startActivity(flipped);
+	 }
 }
