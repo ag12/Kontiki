@@ -4,5 +4,39 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-
+     <LinearLayout
+        android:id="@+id/tab1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="62dp" >
+    
+		<TextView 
+		    android:id="@+id/textview_statistics"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="16dp"
+	        android:gravity="center_horizontal"
+	        android:text="@string/activity_statistics_textview"
+	        android:textSize="12dp"
+	        android:textColor="@color/black"
+	        />
+		
+		<Button
+		    android:id="@+id/button_statistics"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="16dp"
+	        android:gravity="center_horizontal"
+	        android:text="@string/activity_statistics_button"
+	        android:textColor="@color/black"
+	        />
+		
+		<ListView 
+		    android:id="@+id/statistics_list"
+		    android:layout_marginTop="16dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+		</ListView>
+	</LinearLayout>
 </LinearLayout>
