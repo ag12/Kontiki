@@ -63,3 +63,11 @@ Kontiki/bin/Kontiki.apk
 
 Kontiki/bin/resources.ap_
 
+
+Kontiki/AndroidManifest.xml
+
+Kontiki/bin/AndroidManifest.xml
+
+Kontiki/bin/classes.dex
+
+Kontiki/gen/prototype/start/R.java
