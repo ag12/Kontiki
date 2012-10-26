@@ -10,6 +10,8 @@
 *.class
 
 # generated files
+Kontiki/bin/
+Kontiki/gen/
 bin/
 gen/
 
@@ -17,6 +19,7 @@ gen/
 local.properties
 
 # Eclipse project files
+Kontiki/.classpath
 .classpath
 .project
 
