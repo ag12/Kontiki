@@ -1,5 +1,6 @@
 package prototype.activities;
 
+import prototype.adapter.HomeListAdapter;
 import prototype.adapter.KontikiArrayadapter;
 import prototype.start.R;
 import android.app.Activity;
@@ -17,17 +18,18 @@ public class HomeActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
 		ListView homeListView = (ListView) findViewById(R.id.list);
-		String[] books = new String[] { "The Lord of the Rings",
-				"Harry Potter and the Goblet of Fire",
-				"The Leonardo da Vinci Code", "Teenage Mutant Ninja Turtles",
-				"The Hitchhiker's Guide to the Galaxy",
-				"The Restaurant at the End of the Galaxy",
-				"So Long, and Thanks for the Fish",
-				"Life, the Universe and Everything", "Mostly Harmless",
-				"And Another Thing" };
-		ArrayAdapter<String> homeAdapter = new KontikiArrayadapter(this, books,
-				R.layout.row_layout_home, R.drawable.open_book_big);
+		int[] books = new int[] { R.drawable.angels_and_deamons_button,
+				R.drawable.hobbit,
+				R.drawable.lotr_1,
+				R.drawable.lotr_1,
+				R.drawable.lotr_1,
+				R.drawable.lotr_1};
+		String[] emptySpaces = {"","","","","",""};
+		ArrayAdapter<String> homeAdapter = new HomeListAdapter(this,
+				R.layout.row_layout_home, books,emptySpaces);
 		homeListView.setAdapter(homeAdapter);
+		homeListView.setDivider(null);
+		homeListView.setDividerHeight(0);
 
 	}
 
