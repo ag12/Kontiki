@@ -31,27 +31,27 @@ public class TabHostActivity extends TabActivity {
 
 		intent = new Intent().setClass(this, HomeActivity.class);
 
-		spec = tabHost.newTabSpec("main")
+		spec = tabHost.newTabSpec("")
 				.setIndicator("", res.getDrawable(R.drawable.icon_home_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		intent = new Intent().setClass(this, BookStoreActivity.class);
-		spec = tabHost.newTabSpec("peoples")
+		spec = tabHost.newTabSpec("")
 				.setIndicator("", res.getDrawable(R.drawable.icon_store_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		intent = new Intent().setClass(this, StatisticActivity.class);
 		spec = tabHost
-				.newTabSpec("everbody")
+				.newTabSpec("")
 				.setIndicator("", res.getDrawable(R.drawable.icon_social_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
 		intent = new Intent().setClass(this, SocialActivity.class);
 		spec = tabHost
-				.newTabSpec("everbody")
+				.newTabSpec("")
 				.setIndicator("",
 						res.getDrawable(R.drawable.icon_statistics_press))
 				.setContent(intent);
@@ -61,9 +61,10 @@ public class TabHostActivity extends TabActivity {
 		// tabHost.getTabWidget().getChildAt(3).seth
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
-					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC  329BD4
+					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
+																		// 329BD4
 		}
-	
+
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
 
 	}

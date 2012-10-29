@@ -13,13 +13,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-public class HomeActivity extends Activity {
+public class HomeActivity extends ListActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		ListView homeListView = (ListView) findViewById(R.id.list);
+		ListView homeListView = (ListView) findViewById(android.R.id.list);
 		int[] books = new int[] { R.drawable.angels_and_deamons,
 				R.drawable.hobbit, R.drawable.lotr };
 
@@ -31,12 +31,12 @@ public class HomeActivity extends Activity {
 
 	}
 
-	/*
-	 * @Override protected void onListItemClick(ListView l, View v, int
-	 * position, long id) { // TODO Auto-generated method stub
-	 * super.onListItemClick(l, v, position, id); Toast.makeText( this,
-	 * "OAS button.." +getListAdapter().getItem(position), 10).show(); }
-	 */
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		Toast.makeText(this,
+				"OAS button.." + (position +1), 10).show();
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
