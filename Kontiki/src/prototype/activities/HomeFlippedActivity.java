@@ -28,7 +28,6 @@ import prototype.start.R;
 
 import prototype.start.TabHostActivity;
 
-
 import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Context;
@@ -51,6 +50,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 
 public class HomeFlippedActivity extends Activity {
@@ -60,6 +60,9 @@ public class HomeFlippedActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
+
+		
+		
 		CoverFlow coverFlow;
 		coverFlow = new CoverFlow(this);
 
@@ -76,11 +79,8 @@ public class HomeFlippedActivity extends Activity {
 		coverFlow.setAnimationDuration(1000);
 
 		setContentView(coverFlow);
-//		TabActivity ta = (TabActivity) this.getParent();
-//		ta.getTabWidget().getChildAt(4).setVisibility(View.VISIBLE);
-//		ta.getTabHost().setCurrentTab(4);
 	}
-	
+
 	@Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
@@ -205,7 +205,6 @@ public class HomeFlippedActivity extends Activity {
 			/* Formula: 1 / (2 ^ offset) */
 			return Math.max(0, 1.0f / (float) Math.pow(2, Math.abs(offset)));
 		}
-
 
 	}
 

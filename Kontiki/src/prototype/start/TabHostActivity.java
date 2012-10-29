@@ -7,6 +7,7 @@ import prototype.activities.SocialActivity;
 import prototype.activities.StatisticActivity;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -60,12 +61,14 @@ public class TabHostActivity extends TabActivity {
 		tabHost.addTab(spec);
 
 		intent = new Intent().setClass(this, HomeFlippedActivity.class);
+		intent.putExtra("flipped", true);
 		spec = tabHost
 				.newTabSpec("")
 				.setIndicator("",
 						res.getDrawable(R.drawable.icon_statistics_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
+		
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 
@@ -74,8 +77,14 @@ public class TabHostActivity extends TabActivity {
 					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
 																		// 329BD4
 		}
-		
+
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
+
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
 
 	}
 
