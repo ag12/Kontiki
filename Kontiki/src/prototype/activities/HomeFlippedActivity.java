@@ -80,8 +80,8 @@ public class HomeFlippedActivity extends Activity {
     @Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
-		Intent home = new Intent(this, TabHostActivity.class);
-		startActivity(home);
+		Intent tabHost = new Intent(this, TabHostActivity.class);
+		startActivity(tabHost);
 	}
     
  public class ImageAdapter extends BaseAdapter {
