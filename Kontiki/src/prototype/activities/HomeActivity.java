@@ -23,22 +23,20 @@ public class HomeActivity extends Activity {
 		int[] books = new int[] { R.drawable.angels_and_deamons,
 				R.drawable.hobbit, R.drawable.lotr };
 
-		String[] emptySpaces = { "", "", ""};
+		String[] emptySpaces = { "", "", "" };
 		ArrayAdapter<String> homeAdapter = new HomeListAdapter(this,
 				R.layout.new_row_layout_home, books, emptySpaces);
-		
-		
+
 		homeListView.setAdapter(homeAdapter);
 
 	}
-	/*@Override
-	protected void onListItemClick(ListView l, View v, int position, long id) {
-		// TODO Auto-generated method stub
-		super.onListItemClick(l, v, position, id);
-		Toast.makeText(
-				this,
-				"OAS button.." +getListAdapter().getItem(position), 10).show();
-	}*/
+
+	/*
+	 * @Override protected void onListItemClick(ListView l, View v, int
+	 * position, long id) { // TODO Auto-generated method stub
+	 * super.onListItemClick(l, v, position, id); Toast.makeText( this,
+	 * "OAS button.." +getListAdapter().getItem(position), 10).show(); }
+	 */
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
