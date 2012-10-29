@@ -26,12 +26,16 @@ import java.io.FileInputStream;
 
 import prototype.externals.CoverFlow;
 import prototype.start.R;
+import prototype.start.TabHostActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -67,10 +71,18 @@ public class HomeFlippedActivity extends Activity {
      coverFlow.setSpacing(-25);
      coverFlow.setSelection(4, true);
      coverFlow.setAnimationDuration(1000);
+     coverFlow.setBackgroundColor(Color.CYAN);
      
      
      setContentView(coverFlow);
     }
+    
+    @Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		Intent home = new Intent(this, TabHostActivity.class);
+		startActivity(home);
+	}
     
  public class ImageAdapter extends BaseAdapter {
      int mGalleryItemBackground;
