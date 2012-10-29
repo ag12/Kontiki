@@ -27,9 +27,16 @@
         </activity>
         <activity android:name="prototype.activities.SocialActivity" >
         </activity>
-        <activity android:name="prototype.activities.HomeFlippedActivity" android:screenOrientation="unspecified" android:configChanges="orientation|screenSize">
+        <activity
+            android:name="prototype.activities.HomeFlippedActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
         </activity>
-        <activity android:name="prototype.activities.HomeActivity" android:screenOrientation="unspecified" android:configChanges="orientation|screenSize"></activity>
+        <activity
+            android:name="prototype.activities.HomeActivity"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="unspecified" >
+        </activity>
     </application>
 
 </manifest>

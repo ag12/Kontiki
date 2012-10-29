@@ -59,14 +59,6 @@ public class TabHostActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		// tabHost.getTabWidget().getChildAt(3).setVisibility(View.GONE);
-		// tabHost.getTabWidget().getChildAt(3).seth
-		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
-			tabHost.getTabWidget().getChildAt(i)
-					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
-																		// 329BD4
-		}
-
 		intent = new Intent().setClass(this, HomeFlippedActivity.class);
 		spec = tabHost
 				.newTabSpec("")
@@ -77,6 +69,12 @@ public class TabHostActivity extends TabActivity {
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 
+		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
+			tabHost.getTabWidget().getChildAt(i)
+					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
+																		// 329BD4
+		}
+		
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
 
 	}
