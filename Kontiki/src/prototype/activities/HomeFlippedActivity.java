@@ -76,9 +76,9 @@ public class HomeFlippedActivity extends Activity {
 		coverFlow.setAnimationDuration(1000);
 
 		setContentView(coverFlow);
-		TabActivity ta = (TabActivity) this.getParent();
-		ta.getTabWidget().getChildAt(4).setVisibility(View.VISIBLE);
-		ta.getTabHost().setCurrentTab(4);
+		//TabActivity ta = (TabActivity) this.getParent();
+		//ta.getTabWidget().getChildAt(4).setVisibility(View.VISIBLE);
+		//ta.getTabHost().setCurrentTab(4);
 	}
 
 	public class ImageAdapter extends BaseAdapter {
