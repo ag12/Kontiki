@@ -21,11 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="prototype.activities.HomeActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="fullSensor" >
-        </activity>
         <activity android:name="prototype.activities.BookStoreActivity" >
         </activity>
         <activity android:name="prototype.activities.StatisticActivity" >
@@ -34,6 +29,7 @@
         </activity>
         <activity android:name="prototype.activities.HomeFlippedActivity" >
         </activity>
+        <activity android:name="prototype.activities.HomeActivity"></activity>
     </application>
 
 </manifest>

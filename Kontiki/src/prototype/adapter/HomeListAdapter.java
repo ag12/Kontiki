@@ -15,8 +15,9 @@ public class HomeListAdapter extends ArrayAdapter<String> {
 	private final int[] images;
 	private final int layout;
 
-	public HomeListAdapter(Context context, int layout, int[] images, String[] values) {
-		super(context, layout,values);
+	public HomeListAdapter(Context context, int layout, int[] images,
+			String[] values) {
+		super(context, layout, values);
 		this.context = context;
 		this.images = images;
 		this.layout = layout;
@@ -26,8 +27,9 @@ public class HomeListAdapter extends ArrayAdapter<String> {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		View rowView = inflater.inflate(layout, parent, false);
-		ImageView imageView = (ImageView) rowView.findViewById(R.id.book_icon);
+		
+		View rowView = inflater.inflate(this.layout, parent, false);
+		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_icon);
 		imageView.setImageResource(images[position]);
 
 		return rowView;
