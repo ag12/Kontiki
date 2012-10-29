@@ -2,6 +2,7 @@ package prototype.start;
 
 import prototype.activities.BookStoreActivity;
 import prototype.activities.HomeActivity;
+import prototype.activities.HomeFlippedActivity;
 import prototype.activities.SocialActivity;
 import prototype.activities.StatisticActivity;
 import android.app.TabActivity;
@@ -10,6 +11,7 @@ import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TabHost;
 
 @SuppressWarnings("deprecation")
@@ -64,6 +66,16 @@ public class TabHostActivity extends TabActivity {
 					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
 																		// 329BD4
 		}
+
+		intent = new Intent().setClass(this, HomeFlippedActivity.class);
+		spec = tabHost
+				.newTabSpec("")
+				.setIndicator("",
+						res.getDrawable(R.drawable.icon_statistics_press))
+				.setContent(intent);
+		tabHost.addTab(spec);
+
+		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
 

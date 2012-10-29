@@ -30,7 +30,22 @@ public class HomeListAdapter extends ArrayAdapter<String> {
 		
 		View rowView = inflater.inflate(this.layout, parent, false);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.image_icon);
-		imageView.setImageResource(images[position]);
+		/*int[] books = new int[] { R.drawable.angels_and_deamons,
+		R.drawable.hobbit, R.drawable.lotr };*/
+		switch (images[position]) {
+		case 0:
+			imageView.setImageResource(R.drawable.angels_and_deamons);
+			break;
+		case 1:
+			imageView.setImageResource(R.drawable.hobbit);
+			break;
+		case 2:
+			imageView.setImageResource(R.drawable.lotr);
+			break;
+		default:
+			break;
+		}
+	
 
 		return rowView;
 	}
