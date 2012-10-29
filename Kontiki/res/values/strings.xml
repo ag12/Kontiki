@@ -7,5 +7,5 @@
     <string name="activity_social_textview">News feed</string>
     <string name="activity_statistics_textview">Check statistics for each book, or overall statistics</string>
 	<string name="activity_statistics_button">Overall statistics</string>
-    
+    <string name="imageViewBook">Image</string>
 </resources>
