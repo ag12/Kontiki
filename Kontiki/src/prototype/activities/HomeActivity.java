@@ -8,6 +8,8 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.MeasureSpec;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -17,12 +19,13 @@ public class HomeActivity extends ListActivity {
 
 	private ImageView lastImage;
 	private int lastInt;
+	private ListView homeListView;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		ListView homeListView = (ListView) findViewById(android.R.id.list);
+		homeListView = (ListView) findViewById(android.R.id.list);
 		/*
 		 * int[] books = new int[] { R.drawable.angels_and_deamons,
 		 * R.drawable.hobbit, R.drawable.lotr };
@@ -35,9 +38,8 @@ public class HomeActivity extends ListActivity {
 				R.layout.new_row_layout_home, books, emptySpaces);
 
 		homeListView.setAdapter(homeAdapter);
-
 	}
-
+	
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
