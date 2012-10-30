@@ -11,6 +11,7 @@
         android:id="@+id/image_icon"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/imageViewBook" />
+        android:contentDescription="@string/imageViewBook"
+        android:scaleType="fitXY" />
 
 </LinearLayout>

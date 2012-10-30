@@ -42,8 +42,13 @@ public class HomeListAdapter extends ArrayAdapter<String> {
 		case 2:
 			imageView.setImageResource(R.drawable.lotr);
 			break;
-		default:
+		case 3:
+			imageView.setImageResource(R.drawable.lotr);
 			break;
+		case 4:
+			imageView.setImageResource(R.drawable.hobbit);
+			break;
+		default:
 		}
 	
 

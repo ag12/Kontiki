@@ -28,9 +28,9 @@ public class HomeActivity extends ListActivity {
 		 * R.drawable.hobbit, R.drawable.lotr };
 		 */
 
-		int[] books = new int[] { 0, 1, 2 };
+		int[] books = new int[] { 0, 1, 2, 3, 4};
 
-		String[] emptySpaces = { "", "", "" };
+		String[] emptySpaces = { "", "", "", "", "" };
 		ArrayAdapter<String> homeAdapter = new HomeListAdapter(this,
 				R.layout.new_row_layout_home, books, emptySpaces);
 
@@ -59,6 +59,14 @@ public class HomeActivity extends ListActivity {
 				Toast.makeText(this, "3?", 10).show();
 				lastImage.setImageResource(R.drawable.lotr);
 				break;
+			case 3:
+				Toast.makeText(this, "4?", 10).show();
+				lastImage.setImageResource(R.drawable.lotr);
+				break;
+			case 4:
+				Toast.makeText(this, "5?", 10).show();
+				lastImage.setImageResource(R.drawable.hobbit);
+				break;
 			default:
 				break;
 			}
@@ -76,6 +84,14 @@ public class HomeActivity extends ListActivity {
 		case 2:
 			lastInt = 2;
 			imageView.setImageResource(R.drawable.lotr_pushed_1);
+			break;
+		case 3:
+			lastInt = 3;
+			imageView.setImageResource(R.drawable.lotr_pushed_1);
+			break;
+		case 4:
+			lastInt = 4;
+			imageView.setImageResource(R.drawable.hobbit_push);
 			break;
 		default:
 			break;
@@ -108,6 +124,12 @@ public class HomeActivity extends ListActivity {
 		case 2:
 			imageView.setImageResource(R.drawable.lotr);
 			break;
+		case 3:
+			imageView.setImageResource(R.drawable.lotr);
+			break;
+		case 4:
+			imageView.setImageResource(R.drawable.hobbit);
+			break;
 		default:
 			break;
 		}
@@ -126,6 +148,12 @@ public class HomeActivity extends ListActivity {
 			break;
 		case 2:
 			imageView.setImageResource(R.drawable.lotr_pushed_1);
+			break;
+		case 3:
+			imageView.setImageResource(R.drawable.lotr_pushed_1);
+			break;
+		case 4:
+			imageView.setImageResource(R.drawable.hobbit_push);
 			break;
 		default:
 			break;
