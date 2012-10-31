@@ -37,7 +37,8 @@
             android:configChanges="orientation|screenSize"
             android:screenOrientation="unspecified" >
         </activity>
-        
+        <activity android:name="prototype.activities.ReadingActivity" >
+        </activity>
     </application>
 
 </manifest>
