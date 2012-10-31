@@ -21,8 +21,7 @@ public class ReadingActivity extends Activity {
 
 		}
 	};
-	
-	
+
 	private OnClickListener bookMarkImageClick = new OnClickListener() {
 
 		@Override
@@ -33,12 +32,12 @@ public class ReadingActivity extends Activity {
 		}
 	};
 	private OnClickListener finishBookImageClick = new OnClickListener() {
-		
+
 		@Override
 		public void onClick(View v) {
-			
+
 			Toast.makeText(ReadingActivity.this, "Finish book Push", 10).show();
-			
+
 		}
 	};
 
@@ -50,8 +49,8 @@ public class ReadingActivity extends Activity {
 		topBarImage = (ImageView) findViewById(R.id.topBarImage);
 		bookMarkImage = (ImageView) findViewById(R.id.bookMarkImage);
 
-		finishBookImage = (ImageView)findViewById(R.id.finishBookImage);
-		
+		finishBookImage = (ImageView) findViewById(R.id.finishBookImage);
+
 		topBarImage.setOnClickListener(topBarImageClick);
 		bookMarkImage.setOnClickListener(bookMarkImageClick);
 		finishBookImage.setOnClickListener(finishBookImageClick);
