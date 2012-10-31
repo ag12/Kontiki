@@ -31,7 +31,7 @@ public class TabHostActivity extends TabActivity {
 		setContentView(R.layout.activity_tab_host);
 
 		res = getResources();
-		tabHost = getTabHost();
+		tabHost = getTabHost(); 
 
 		intent = new Intent().setClass(this, HomeActivity.class);
 
