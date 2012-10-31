@@ -82,7 +82,7 @@ public class TabHostActivity extends TabActivity {
 		
 		
 
-		//tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
+		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 		//tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
 
 

@@ -2,41 +2,46 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/text_background" >
-    
+    android:background="@drawable/text_background"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/book_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/top_bar_lotr" />
+
+        <ImageView
+            android:id="@+id/book_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/bookmark" />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:orientation="horizontal" >
-        
-        <ImageView 
-            android:id="@+id/book_header"
-            android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/top_bar_lotr"
-    		/>
-        
-        <ImageView 
-            android:id="@+id/book_bookmark"
-            android:layout_width="match_parent"
-    		android:layout_height="wrap_content"
-    		android:src="@drawable/bookmark"
-    		/>
-    </LinearLayout>
-    
-    <ImageView 
-        android:id="@+id/book_text"
-        android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:src="@drawable/lotr_last_page"
-        />
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
 
-    <ImageView 
-        android:id="@+id/book_finished"
-        android:layout_width="match_parent"
-    	android:layout_height="wrap_content"
-    	android:src="@drawable/finish_book"
-        />
-    
+        <ImageView
+            android:id="@+id/book_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:src="@drawable/lotr_last_page" />
+
+        <ImageView
+            android:id="@+id/book_finished"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/finish_book" />
+    </LinearLayout>
+
 </LinearLayout>
