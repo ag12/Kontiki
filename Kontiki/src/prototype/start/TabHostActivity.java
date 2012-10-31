@@ -96,7 +96,7 @@ public class TabHostActivity extends TabActivity {
 		}
 
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
-
+		
 	}
 
 	@Override

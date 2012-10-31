@@ -64,35 +64,42 @@ public final class R {
         public static final int vinci_code=0x7f020023;
     }
     public static final class id {
-        public static final int RLayout=0x7f08000a;
+        public static final int RLayout=0x7f080010;
+        public static final int bookMarkImage=0x7f080006;
+        public static final int bookTextlor=0x7f080009;
         public static final int book_bookmark=0x7f080002;
         public static final int book_finished=0x7f080004;
         public static final int book_header=0x7f080001;
         public static final int book_text=0x7f080003;
-        public static final int button_statistics=0x7f080008;
-        public static final int icon=0x7f08000c;
-        public static final int image_icon=0x7f08000b;
-        public static final int label=0x7f08000d;
-        public static final int list2=0x7f080006;
-        public static final int menu_settings=0x7f08000f;
-        public static final int progress_icon=0x7f08000e;
-        public static final int statistics_list=0x7f080009;
+        public static final int button_statistics=0x7f08000e;
+        public static final int finishBookImage=0x7f08000a;
+        public static final int icon=0x7f080012;
+        public static final int imageView1=0x7f080008;
+        public static final int image_icon=0x7f080011;
+        public static final int label=0x7f080013;
+        public static final int list2=0x7f08000c;
+        public static final int menu_settings=0x7f080015;
+        public static final int progress_icon=0x7f080014;
+        public static final int scrollView1=0x7f080007;
+        public static final int statistics_list=0x7f08000f;
         public static final int tab1=0x7f080000;
-        public static final int textview_newsfeed=0x7f080005;
-        public static final int textview_statistics=0x7f080007;
+        public static final int textview_newsfeed=0x7f08000b;
+        public static final int textview_statistics=0x7f08000d;
+        public static final int topBarImage=0x7f080005;
     }
     public static final class layout {
         public static final int activity_bookstore=0x7f030000;
         public static final int activity_home=0x7f030001;
         public static final int activity_reading=0x7f030002;
-        public static final int activity_social=0x7f030003;
-        public static final int activity_statistic=0x7f030004;
-        public static final int activity_tab_host=0x7f030005;
-        public static final int new_row_layout_home=0x7f030006;
-        public static final int row_layout_home=0x7f030007;
-        public static final int row_layout_home_old=0x7f030008;
-        public static final int row_layout_social=0x7f030009;
-        public static final int row_layout_statistics=0x7f03000a;
+        public static final int activity_reading_new=0x7f030003;
+        public static final int activity_social=0x7f030004;
+        public static final int activity_statistic=0x7f030005;
+        public static final int activity_tab_host=0x7f030006;
+        public static final int new_row_layout_home=0x7f030007;
+        public static final int row_layout_home=0x7f030008;
+        public static final int row_layout_home_old=0x7f030009;
+        public static final int row_layout_social=0x7f03000a;
+        public static final int row_layout_statistics=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_tab_host=0x7f070000;
