@@ -3,6 +3,7 @@ package prototype.start;
 import prototype.activities.BookStoreActivity;
 import prototype.activities.HomeActivity;
 import prototype.activities.HomeFlippedActivity;
+import prototype.activities.ReadingActivity;
 import prototype.activities.SocialActivity;
 import prototype.activities.StatisticActivity;
 import android.app.TabActivity;
@@ -69,9 +70,25 @@ public class TabHostActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 		
+		
+		
+		intent = new Intent().setClass(this, ReadingActivity.class);
+		spec = tabHost
+				.newTabSpec("")
+				.setIndicator("",
+						res.getDrawable(R.drawable.icon_statistics_press))
+				.setContent(intent);
+		tabHost.addTab(spec);
+		
+		
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
+		//tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
 
+
+		
+		
+		
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
 					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
