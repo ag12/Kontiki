@@ -31,7 +31,7 @@ public class TabHostActivity extends TabActivity {
 		setContentView(R.layout.activity_tab_host);
 
 		res = getResources();
-		tabHost = getTabHost(); 
+		tabHost = getTabHost();
 
 		intent = new Intent().setClass(this, HomeActivity.class);
 
@@ -69,9 +69,7 @@ public class TabHostActivity extends TabActivity {
 						res.getDrawable(R.drawable.icon_statistics_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
-		
-		
-		
+
 		intent = new Intent().setClass(this, ReadingActivity.class);
 		spec = tabHost
 				.newTabSpec("")
@@ -79,16 +77,10 @@ public class TabHostActivity extends TabActivity {
 						res.getDrawable(R.drawable.icon_statistics_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
-		
-		
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
-		//tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
+		tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
 
-
-		
-		
-		
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
 					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
@@ -96,7 +88,7 @@ public class TabHostActivity extends TabActivity {
 		}
 
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
-		
+
 	}
 
 	@Override

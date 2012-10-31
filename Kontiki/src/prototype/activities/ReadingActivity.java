@@ -2,7 +2,9 @@ package prototype.activities;
 
 import prototype.start.R;
 import android.app.Activity;
+import android.app.TabActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -11,6 +13,7 @@ import android.widget.Toast;
 
 public class ReadingActivity extends Activity {
 
+	private boolean bookMarkPushed, finishBookPushed;
 	private ImageView topBarImage, bookMarkImage, finishBookImage;
 	private OnClickListener topBarImageClick = new OnClickListener() {
 
@@ -27,7 +30,24 @@ public class ReadingActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 
-			Toast.makeText(ReadingActivity.this, "Bookmark Push", 10).show();
+			if (bookMarkPushed) {
+				bookMarkImage.setImageResource(R.drawable.bookmark);
+				bookMarkPushed = false;
+
+			} else if (!bookMarkPushed) {
+				bookMarkImage.setImageResource(R.drawable.bookmark_pushed);
+				bookMarkPushed = true;
+
+			}
+
+			new Handler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					goBackToHome();
+
+				}
+			}, 250);
 
 		}
 	};
@@ -36,16 +56,45 @@ public class ReadingActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 
-			Toast.makeText(ReadingActivity.this, "Finish book Push", 10).show();
+			if (finishBookPushed) {
+				finishBookImage.setImageResource(R.drawable.finish_book);
+				finishBookPushed = false;
+			} else if (!finishBookPushed) {
+				finishBookImage.setImageResource(R.drawable.finish_book_pushed);
+				finishBookPushed = true;
+			}
+
+			new Handler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+					didFinishBook();
+
+				}
+			}, 250);
 
 		}
 	};
+
+	public void didFinishBook() {
+
+	}
+
+	public void goBackToHome() {
+
+		TabActivity tabActivity = (TabActivity) ReadingActivity.this
+				.getParent();
+		tabActivity.getTabHost().setCurrentTab(0);
+
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_reading_new);
 
+		bookMarkPushed = false;
+		finishBookPushed = false;
 		topBarImage = (ImageView) findViewById(R.id.topBarImage);
 		bookMarkImage = (ImageView) findViewById(R.id.bookMarkImage);
 

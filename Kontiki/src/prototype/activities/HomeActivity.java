@@ -2,17 +2,22 @@ package prototype.activities;
 
 import prototype.adapter.HomeListAdapter;
 import prototype.start.R;
+import android.R.bool;
 import android.app.ListActivity;
+import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SlidingDrawer;
 import android.widget.Toast;
 
 public class HomeActivity extends ListActivity {
@@ -31,7 +36,7 @@ public class HomeActivity extends ListActivity {
 		 * R.drawable.hobbit, R.drawable.lotr };
 		 */
 
-		int[] books = new int[] { 0, 1, 2, 3, 4};
+		int[] books = new int[] { 0, 1, 2, 3, 4 };
 
 		String[] emptySpaces = { "", "", "", "", "" };
 		ArrayAdapter<String> homeAdapter = new HomeListAdapter(this,
@@ -39,7 +44,7 @@ public class HomeActivity extends ListActivity {
 
 		homeListView.setAdapter(homeAdapter);
 	}
-	
+
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
@@ -47,26 +52,24 @@ public class HomeActivity extends ListActivity {
 		ImageView imageView = (ImageView) v.findViewById(R.id.image_icon);
 		if (lastImage != null && !lastImage.equals(imageView)) {
 
-			Toast.makeText(this, "Second?", 10).show();
 			switch (lastInt) {
 			case 0:
-				Toast.makeText(this, "1?", 10).show();
+
 				lastImage.setImageResource(R.drawable.angels_and_deamons);
 				break;
 			case 1:
-				Toast.makeText(this, "2?", 10).show();
+
 				lastImage.setImageResource(R.drawable.hobbit);
 				break;
 			case 2:
-				Toast.makeText(this, "3?", 10).show();
+
 				lastImage.setImageResource(R.drawable.lotr);
 				break;
 			case 3:
-				Toast.makeText(this, "4?", 10).show();
+
 				lastImage.setImageResource(R.drawable.lotr);
 				break;
 			case 4:
-				Toast.makeText(this, "5?", 10).show();
 				lastImage.setImageResource(R.drawable.hobbit);
 				break;
 			default:
@@ -100,15 +103,21 @@ public class HomeActivity extends ListActivity {
 		}
 		lastImage = imageView;
 
-		/*
-		 * if (l.isPressed()) {
-		 * 
-		 * showView(position, v);
-		 * 
-		 * } else if (l.isFocused()) {
-		 * 
-		 * cleanView(position, v); }
-		 */
+		new Handler().postDelayed(new Runnable() {
+
+			@Override
+			public void run() {
+				goToView();
+
+			}
+		}, 250);
+
+	}
+
+	public void goToView() {
+
+		TabActivity tabActivity = (TabActivity) HomeActivity.this.getParent();
+		tabActivity.getTabHost().setCurrentTab(5);
 
 	}
 
@@ -161,6 +170,60 @@ public class HomeActivity extends ListActivity {
 			break;
 		}
 
+	}
+
+	@Override
+	public ListAdapter getListAdapter() {
+		// TODO Auto-generated method stub
+		return super.getListAdapter();
+	}
+
+	@Override
+	public ListView getListView() {
+		// TODO Auto-generated method stub
+		return super.getListView();
+	}
+
+	@Override
+	public long getSelectedItemId() {
+		// TODO Auto-generated method stub
+		return super.getSelectedItemId();
+	}
+
+	@Override
+	public int getSelectedItemPosition() {
+		// TODO Auto-generated method stub
+		return super.getSelectedItemPosition();
+	}
+
+	@Override
+	public void onContentChanged() {
+		// TODO Auto-generated method stub
+		super.onContentChanged();
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		super.onDestroy();
+	}
+
+	@Override
+	protected void onRestoreInstanceState(Bundle state) {
+		// TODO Auto-generated method stub
+		super.onRestoreInstanceState(state);
+	}
+
+	@Override
+	public void setListAdapter(ListAdapter adapter) {
+		// TODO Auto-generated method stub
+		super.setListAdapter(adapter);
+	}
+
+	@Override
+	public void setSelection(int position) {
+		// TODO Auto-generated method stub
+		super.setSelection(position);
 	}
 
 	@Override
