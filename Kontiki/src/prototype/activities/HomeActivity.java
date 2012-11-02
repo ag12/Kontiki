@@ -67,7 +67,7 @@ public class HomeActivity extends ListActivity {
 				break;
 			case 3:
 
-				lastImage.setImageResource(R.drawable.lotr);
+				lastImage.setImageResource(R.drawable.lotr2);
 				break;
 			case 4:
 				lastImage.setImageResource(R.drawable.hobbit);
@@ -92,7 +92,7 @@ public class HomeActivity extends ListActivity {
 			break;
 		case 3:
 			lastInt = 3;
-			imageView.setImageResource(R.drawable.lotr_pushed_1);
+			imageView.setImageResource(R.drawable.lotr2_pushed);
 			break;
 		case 4:
 			lastInt = 4;
@@ -117,7 +117,11 @@ public class HomeActivity extends ListActivity {
 	public void goToView() {
 
 		TabActivity tabActivity = (TabActivity) HomeActivity.this.getParent();
-		tabActivity.getTabHost().setCurrentTab(5);
+		tabActivity.getTabWidget().getChildAt(0).setVisibility(View.GONE);
+		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.GONE);
+		tabActivity.getTabWidget().getChildAt(2).setVisibility(View.GONE);
+		tabActivity.getTabWidget().getChildAt(3).setVisibility(View.GONE);
+		tabActivity.getTabHost().setCurrentTab(4);
 
 	}
 

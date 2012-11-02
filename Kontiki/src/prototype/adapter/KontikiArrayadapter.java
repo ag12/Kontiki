@@ -32,7 +32,7 @@ public class KontikiArrayadapter extends ArrayAdapter<String> {
 		View rowView = inflater.inflate(layout, parent, false);
 		TextView textView = (TextView) rowView.findViewById(R.id.label);
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
-		textView.setText(values[position]);
+		//textView.setText(values[position]);
 		imageView.setImageResource(image);
 
 		return rowView;

@@ -49,9 +49,8 @@
                 android:id="@+id/finishBookImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/finish_book" 
                 android:layout_below="@id/bookTextlor"
-               />
+                android:src="@drawable/finish_book" />
         </RelativeLayout>
     </ScrollView>
 

@@ -28,7 +28,7 @@ public class TabHostActivity extends TabActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tab_host);
+		setContentView(R.layout.activity_tab_host_new);
 
 		res = getResources();
 		tabHost = getTabHost();
@@ -61,15 +61,6 @@ public class TabHostActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		intent = new Intent().setClass(this, HomeFlippedActivity.class);
-		intent.putExtra("flipped", true);
-		spec = tabHost
-				.newTabSpec("")
-				.setIndicator("",
-						res.getDrawable(R.drawable.icon_statistics_press))
-				.setContent(intent);
-		tabHost.addTab(spec);
-
 		intent = new Intent().setClass(this, ReadingActivity.class);
 		spec = tabHost
 				.newTabSpec("")
@@ -79,7 +70,6 @@ public class TabHostActivity extends TabActivity {
 		tabHost.addTab(spec);
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
-		tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
 
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)

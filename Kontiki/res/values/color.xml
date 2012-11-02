@@ -14,5 +14,7 @@
     <color name="deepSky2">#3BB9FF</color>
     <color name="lightSky">#ADDFFF</color>
     <color name="lightGrey">#413E3E</color>
+    <color name="lightGrey2">#E2E2E4</color>
+    <color name="lightGrey3">#ABABAD</color>
 
 </resources>
