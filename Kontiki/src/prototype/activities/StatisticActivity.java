@@ -1,6 +1,7 @@
 package prototype.activities;
 
 import prototype.adapter.KontikiArrayadapter;
+import prototype.helper.Helper;
 import prototype.start.R;
 import android.app.Activity;
 import android.os.Bundle;
@@ -20,9 +21,7 @@ public class StatisticActivity extends Activity {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			Toast.makeText(
-					StatisticActivity.this,
-					"OAS button..", 10).show();
+			Helper.goToHobbitStatistics(StatisticActivity.this);
 		}
 	};
 

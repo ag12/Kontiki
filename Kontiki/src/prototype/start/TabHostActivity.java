@@ -6,6 +6,7 @@ import prototype.activities.HomeFlippedActivity;
 import prototype.activities.ReadingActivity;
 import prototype.activities.SocialActivity;
 import prototype.activities.StatisticActivity;
+import prototype.activities.StatisticsHobbitActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -70,6 +71,16 @@ public class TabHostActivity extends TabActivity {
 		tabHost.addTab(spec);
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
+		
+		intent = new Intent().setClass(this, StatisticsHobbitActivity.class);
+		spec = tabHost
+				.newTabSpec("")
+				.setIndicator("",
+						res.getDrawable(R.drawable.icon_statistics_press))
+				.setContent(intent);
+		tabHost.addTab(spec);
+
+		tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
 
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
