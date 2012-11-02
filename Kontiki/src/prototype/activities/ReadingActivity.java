@@ -1,8 +1,9 @@
 package prototype.activities;
 
+import prototype.helper.Helper;
 import prototype.start.R;
 import android.app.Activity;
-import android.app.TabActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -12,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ReadingActivity extends Activity {
- 
+
 	private boolean bookMarkPushed, finishBookPushed;
 	private ImageView topBarImage, bookMarkImage, finishBookImage;
 	private OnClickListener topBarImageClick = new OnClickListener() {
@@ -44,7 +45,13 @@ public class ReadingActivity extends Activity {
 
 				@Override
 				public void run() {
-					goBackToHome();
+
+					SharedPreferences myPrefs = ReadingActivity.this
+							.getSharedPreferences("myPrefs",
+									MODE_WORLD_READABLE);
+					int tab = myPrefs.getInt("curentTab", 0);
+					new Helper().ShowMainActivityAndSetCurrentTab(
+							ReadingActivity.this, tab);
 
 				}
 			}, 250);
@@ -77,19 +84,6 @@ public class ReadingActivity extends Activity {
 	};
 
 	public void didFinishBook() {
-
-	}
-
-	public void goBackToHome() {
-
-		TabActivity tabActivity = (TabActivity) ReadingActivity.this
-				.getParent();
-		tabActivity.getTabWidget().getChildAt(0).setVisibility(View.VISIBLE);
-		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.VISIBLE);
-		tabActivity.getTabWidget().getChildAt(2).setVisibility(View.VISIBLE);
-		tabActivity.getTabWidget().getChildAt(3).setVisibility(View.VISIBLE);
-		tabActivity.getTabWidget().getChildAt(4).setVisibility(View.GONE);
-		tabActivity.getTabHost().setCurrentTab(0);
 
 	}
 

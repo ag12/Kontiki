@@ -1,24 +1,20 @@
 package prototype.activities;
 
 import prototype.adapter.HomeListAdapter;
+import prototype.helper.Helper;
 import prototype.start.R;
-import android.R.bool;
 import android.app.ListActivity;
-import android.app.TabActivity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
 import android.view.View;
-import android.view.View.MeasureSpec;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.SlidingDrawer;
-import android.widget.Toast;
 
 public class HomeActivity extends ListActivity {
 
@@ -98,7 +94,7 @@ public class HomeActivity extends ListActivity {
 			lastInt = 4;
 			imageView.setImageResource(R.drawable.hobbit_push);
 			break;
-			
+
 		default:
 			break;
 		}
@@ -108,21 +104,15 @@ public class HomeActivity extends ListActivity {
 
 			@Override
 			public void run() {
-				goToView();
+				SharedPreferences myPrefs = HomeActivity.this
+						.getSharedPreferences("myPrefs", MODE_WORLD_READABLE);
+				SharedPreferences.Editor prefsEditor = myPrefs.edit();
+				prefsEditor.putInt("curentTab", 0);
+				prefsEditor.commit();
+				new Helper().GoToBookReadingView(HomeActivity.this);
 
 			}
 		}, 250);
-
-	}
-
-	public void goToView() {
-
-		TabActivity tabActivity = (TabActivity) HomeActivity.this.getParent();
-		tabActivity.getTabWidget().getChildAt(0).setVisibility(View.GONE);
-		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.GONE);
-		tabActivity.getTabWidget().getChildAt(2).setVisibility(View.GONE);
-		tabActivity.getTabWidget().getChildAt(3).setVisibility(View.GONE);
-		tabActivity.getTabHost().setCurrentTab(4);
 
 	}
 

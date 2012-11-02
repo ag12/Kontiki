@@ -3,9 +3,11 @@ package prototype.activities;
 import prototype.adapter.ImageAdapter;
 import prototype.adapter.SocialArrayadapter;
 import prototype.externals.CoverFlow;
+import prototype.helper.Helper;
 import prototype.start.R;
 import android.app.Dialog;
 import android.app.ListActivity;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,8 +31,6 @@ public class SocialActivity extends ListActivity {
 	private ImageButton customExitButton2, customStartReadingButton2,
 			customDiscussButton2;
 
-	
-	
 	private Button customExitButton, customStartReadingButton,
 			customDiscussButton;
 	private ImageView discussionImage, newsFeedImage;
@@ -65,7 +65,22 @@ public class SocialActivity extends ListActivity {
 
 		@Override
 		public void onClick(View v) {
-			Toast.makeText(SocialActivity.this, "start reading?", 10).show();
+
+			// handler.sendEmptyMessage(0);
+			// new Handler().postDelayed(new Runnable() {
+
+			// @Override
+			// public void run() {
+
+			SharedPreferences myPrefs = SocialActivity.this
+					.getSharedPreferences("myPrefs", MODE_WORLD_READABLE);
+			SharedPreferences.Editor prefsEditor = myPrefs.edit();
+			prefsEditor.putInt("curentTab", 2);
+			prefsEditor.commit();
+			Helper.GoToBookReadingView(SocialActivity.this);
+
+			// }
+			// }, 250);
 
 		}
 	};
@@ -125,48 +140,47 @@ public class SocialActivity extends ListActivity {
 		dialog = new Dialog(this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-
-		
-		//IF USING BUTTONS
+		// IF USING BUTTONS
 		dialog.setContentView(R.layout.social_push_activity);
-        customExitButton = (Button) dialog.findViewById(R.id.customExitButton);
+		customExitButton = (Button) dialog.findViewById(R.id.customExitButton);
 		customExitButton.setVisibility(View.VISIBLE);
 		customExitButton.setBackgroundColor(Color.TRANSPARENT);
 		customExitButton.setOnClickListener(customExitButtonClick);
 
 		customStartReadingButton = (Button) dialog
 				.findViewById(R.id.customStartReadingButton);
-		customExitButton.setVisibility(View.VISIBLE);
+		customStartReadingButton.setVisibility(View.VISIBLE);
 		customStartReadingButton.setBackgroundColor(Color.TRANSPARENT);
 		customStartReadingButton.setOnClickListener(customStartReadingClick);
 
 		customDiscussButton = (Button) dialog
 				.findViewById(R.id.customDiscussButton);
-		customExitButton.setVisibility(View.VISIBLE);
+		customDiscussButton.setVisibility(View.VISIBLE);
 		customDiscussButton.setBackgroundColor(Color.TRANSPARENT);
 		customDiscussButton.setOnClickListener(customDiscussClick);
-		
-		//IF USING IMAGEBUTTONS
-		/*dialog.setContentView(R.layout.social_push_activity2);
-		customExitButton2 = (ImageButton) dialog.findViewById(R.id.customExitButton);
-		customExitButton2.setVisibility(View.VISIBLE);
-		customExitButton2.setBackgroundColor(Color.TRANSPARENT);
-		customExitButton2.setOnClickListener(customExitButtonClick);
 
-		customStartReadingButton2 = (ImageButton) dialog
-				.findViewById(R.id.customStartReadingButton);
-		customExitButton2.setVisibility(View.VISIBLE);
-		customStartReadingButton2.setBackgroundColor(Color.TRANSPARENT);
-		customStartReadingButton2.setOnClickListener(customStartReadingClick);
-
-		customDiscussButton2 = (ImageButton) dialog
-				.findViewById(R.id.customDiscussButton);
-		customExitButton2.setVisibility(View.VISIBLE);
-		customDiscussButton2.setBackgroundColor(Color.TRANSPARENT);
-		customDiscussButton2.setOnClickListener(customDiscussClick);*/
-		
-		
-		
+		// IF USING IMAGEBUTTONS
+		/*
+		 * dialog.setContentView(R.layout.social_push_activity2);
+		 * customExitButton2 = (ImageButton)
+		 * dialog.findViewById(R.id.customExitButton);
+		 * customExitButton2.setVisibility(View.VISIBLE);
+		 * customExitButton2.setBackgroundColor(Color.TRANSPARENT);
+		 * customExitButton2.setOnClickListener(customExitButtonClick);
+		 * 
+		 * customStartReadingButton2 = (ImageButton) dialog
+		 * .findViewById(R.id.customStartReadingButton);
+		 * customExitButton2.setVisibility(View.VISIBLE);
+		 * customStartReadingButton2.setBackgroundColor(Color.TRANSPARENT);
+		 * customStartReadingButton2
+		 * .setOnClickListener(customStartReadingClick);
+		 * 
+		 * customDiscussButton2 = (ImageButton) dialog
+		 * .findViewById(R.id.customDiscussButton);
+		 * customExitButton2.setVisibility(View.VISIBLE);
+		 * customDiscussButton2.setBackgroundColor(Color.TRANSPARENT);
+		 * customDiscussButton2.setOnClickListener(customDiscussClick);
+		 */
 
 		return dialog;
 	}
