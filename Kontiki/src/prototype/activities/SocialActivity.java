@@ -159,6 +159,7 @@ public class SocialActivity extends ListActivity {
 		customDiscussButton.setBackgroundColor(Color.TRANSPARENT);
 		customDiscussButton.setOnClickListener(customDiscussClick);
 
+		
 		// IF USING IMAGEBUTTONS
 		/*
 		 * dialog.setContentView(R.layout.social_push_activity2);

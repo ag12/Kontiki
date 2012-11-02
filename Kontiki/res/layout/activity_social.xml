@@ -41,20 +41,21 @@
             android:id="@android:id/list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:listSelector="@color/deepSky2"
+            android:background="@color/lightGrey3"
+            android:divider="@color/lightGrey3"
             android:dividerHeight="10dip"
-             >
+            android:listSelector="@color/deepSky2"
+            android:padding="10dp" >
         </ListView>
 
         <LinearLayout
             android:id="@+id/cowerflowLayout"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical" 
             android:layout_below="@android:id/list"
             android:background="@drawable/gradient3"
-            android:paddingTop="15dip">
+            android:orientation="vertical"
+            android:paddingTop="15dip" >
         </LinearLayout>
     </RelativeLayout>
 
