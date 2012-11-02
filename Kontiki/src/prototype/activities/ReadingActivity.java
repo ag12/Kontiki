@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ReadingActivity extends Activity {
-
+ 
 	private boolean bookMarkPushed, finishBookPushed;
 	private ImageView topBarImage, bookMarkImage, finishBookImage;
 	private OnClickListener topBarImageClick = new OnClickListener() {
