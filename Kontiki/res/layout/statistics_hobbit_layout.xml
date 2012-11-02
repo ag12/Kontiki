@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/tab_statistics_hobbit"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,13 +12,32 @@
         android:background="@drawable/statistics_frame"
         android:paddingBottom="62dp" >
 
-        <ListView
-            android:id="@android:id/list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" 
-            android:overScrollMode="never">
-        </ListView>
-    </LinearLayout>
-    
+        <ImageView 
+            android:id="@+id/statistics_hobbit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/statistics_hobbit"
+            />
+        
+        <ImageView 
+            android:id="@+id/statistics_hobbit_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/statistics_back"
+            />
+        
+        <ImageView 
+             android:id="@+id/statistics_hobbit_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/statistics_share_stats"
+            />
+    </RelativeLayout>
 
 </LinearLayout>

@@ -104,9 +104,12 @@ public final class R {
         public static final int imageView1=0x7f080008;
         public static final int image_icon=0x7f080013;
         public static final int label=0x7f080015;
-        public static final int menu_settings=0x7f08001a;
+        public static final int menu_settings=0x7f08001d;
         public static final int news_feed_img=0x7f08000c;
         public static final int scrollView1=0x7f080007;
+        public static final int statistics_hobbit=0x7f08001a;
+        public static final int statistics_hobbit_back=0x7f08001b;
+        public static final int statistics_hobbit_share=0x7f08001c;
         public static final int statistics_list=0x7f080011;
         public static final int tab1=0x7f080000;
         public static final int tab_statistics_hobbit=0x7f080019;
