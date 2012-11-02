@@ -46,14 +46,14 @@ public class TabHostActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		intent = new Intent().setClass(this, StatisticActivity.class);
+		intent = new Intent().setClass(this, SocialActivity.class);
 		spec = tabHost
 				.newTabSpec("")
 				.setIndicator("", res.getDrawable(R.drawable.icon_social_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		intent = new Intent().setClass(this, SocialActivity.class);
+		intent = new Intent().setClass(this, StatisticActivity.class);
 		spec = tabHost
 				.newTabSpec("")
 				.setIndicator("",
