@@ -98,6 +98,7 @@ public class HomeActivity extends ListActivity {
 			lastInt = 4;
 			imageView.setImageResource(R.drawable.hobbit_push);
 			break;
+			
 		default:
 			break;
 		}
