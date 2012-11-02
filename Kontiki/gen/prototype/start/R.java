@@ -90,7 +90,7 @@ public final class R {
         public static final int vinci_code=0x7f02003b;
     }
     public static final class id {
-        public static final int RLayout=0x7f080012;
+        public static final int RLayout=0x7f080011;
         public static final int bookMarkImage=0x7f080006;
         public static final int bookTextlor=0x7f080009;
         public static final int book_bookmark=0x7f080002;
@@ -99,25 +99,24 @@ public final class R {
         public static final int book_text=0x7f080003;
         public static final int button_statistics=0x7f080010;
         public static final int cowerflowLayout=0x7f08000e;
-        public static final int customDiscussButton=0x7f080017;
-        public static final int customExitButton=0x7f080016;
-        public static final int customStartReadingButton=0x7f080018;
+        public static final int customDiscussButton=0x7f080016;
+        public static final int customExitButton=0x7f080015;
+        public static final int customStartReadingButton=0x7f080017;
         public static final int discussions_img=0x7f08000d;
         public static final int finishBookImage=0x7f08000a;
         public static final int headerLayout=0x7f08000b;
-        public static final int icon=0x7f080014;
+        public static final int icon=0x7f080013;
         public static final int imageView1=0x7f080008;
-        public static final int image_icon=0x7f080013;
-        public static final int label=0x7f080015;
-        public static final int menu_settings=0x7f08001d;
+        public static final int image_icon=0x7f080012;
+        public static final int label=0x7f080014;
+        public static final int menu_settings=0x7f08001c;
         public static final int news_feed_img=0x7f08000c;
         public static final int scrollView1=0x7f080007;
-        public static final int statistics_hobbit=0x7f08001a;
-        public static final int statistics_hobbit_back=0x7f08001b;
-        public static final int statistics_hobbit_share=0x7f08001c;
-        public static final int statistics_list=0x7f080011;
+        public static final int statistics_hobbit=0x7f080019;
+        public static final int statistics_hobbit_back=0x7f08001a;
+        public static final int statistics_hobbit_share=0x7f08001b;
         public static final int tab1=0x7f080000;
-        public static final int tab_statistics_hobbit=0x7f080019;
+        public static final int tab_statistics_hobbit=0x7f080018;
         public static final int textview_statistics=0x7f08000f;
         public static final int topBarImage=0x7f080005;
     }

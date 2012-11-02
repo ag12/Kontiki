@@ -35,7 +35,6 @@ public class StatisticsHobbitActivity extends Activity{
 			
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				Toast.makeText(StatisticsHobbitActivity.this, "Sharing is caring", 10).show();
 			}
 		});
