@@ -55,13 +55,17 @@ public final class R {
         public static final int progressbar=0x7f02001a;
         public static final int social_notouch=0x7f02001b;
         public static final int social_touch=0x7f02001c;
-        public static final int statistics_notouch=0x7f02001d;
-        public static final int statistics_touch=0x7f02001e;
-        public static final int store_notouch=0x7f02001f;
-        public static final int store_touch=0x7f020020;
-        public static final int text_background=0x7f020021;
-        public static final int top_bar_lotr=0x7f020022;
-        public static final int vinci_code=0x7f020023;
+        public static final int statistics_back=0x7f02001d;
+        public static final int statistics_frame=0x7f02001e;
+        public static final int statistics_hobbit=0x7f02001f;
+        public static final int statistics_notouch=0x7f020020;
+        public static final int statistics_share_stats=0x7f020021;
+        public static final int statistics_touch=0x7f020022;
+        public static final int store_notouch=0x7f020023;
+        public static final int store_touch=0x7f020024;
+        public static final int text_background=0x7f020025;
+        public static final int top_bar_lotr=0x7f020026;
+        public static final int vinci_code=0x7f020027;
     }
     public static final class id {
         public static final int RLayout=0x7f080010;
@@ -78,11 +82,12 @@ public final class R {
         public static final int image_icon=0x7f080011;
         public static final int label=0x7f080013;
         public static final int list2=0x7f08000c;
-        public static final int menu_settings=0x7f080015;
+        public static final int menu_settings=0x7f080016;
         public static final int progress_icon=0x7f080014;
         public static final int scrollView1=0x7f080007;
         public static final int statistics_list=0x7f08000f;
         public static final int tab1=0x7f080000;
+        public static final int tab_statistics_hobbit=0x7f080015;
         public static final int textview_newsfeed=0x7f08000b;
         public static final int textview_statistics=0x7f08000d;
         public static final int topBarImage=0x7f080005;
@@ -100,6 +105,7 @@ public final class R {
         public static final int row_layout_home_old=0x7f030009;
         public static final int row_layout_social=0x7f03000a;
         public static final int row_layout_statistics=0x7f03000b;
+        public static final int statistics_hobbit_layout=0x7f03000c;
     }
     public static final class menu {
         public static final int activity_tab_host=0x7f070000;
