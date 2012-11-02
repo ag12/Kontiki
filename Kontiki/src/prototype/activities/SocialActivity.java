@@ -127,11 +127,13 @@ public class SocialActivity extends ListActivity {
 
 		customStartReadingButton = (Button) dialog
 				.findViewById(R.id.customStartReadingButton);
+		customExitButton.setVisibility(View.VISIBLE);
 		customStartReadingButton.setBackgroundColor(Color.TRANSPARENT);
 		customStartReadingButton.setOnClickListener(customStartReadingClick);
 
 		customDiscussButton = (Button) dialog
 				.findViewById(R.id.customDiscussButton);
+		customExitButton.setVisibility(View.VISIBLE);
 		customDiscussButton.setBackgroundColor(Color.TRANSPARENT);
 		customDiscussButton.setOnClickListener(customDiscussClick);
 

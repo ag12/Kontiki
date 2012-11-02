@@ -2,32 +2,34 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/social_push_dialog"
+    android:background="@drawable/social_push_dialog2"
     android:orientation="vertical" >
 
     <Button
-        android:id="@+id/customExitButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
-
-    <Button
         android:id="@+id/customDiscussButton"
-        android:layout_width="105dip"
+        android:layout_width="100dip"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="15dp"
-        android:layout_marginRight="14dp" />
+        android:layout_marginBottom="16dp"
+        android:layout_marginRight="22dp" />
 
     <Button
         android:id="@+id/customStartReadingButton"
-        android:layout_width="105dip"
+        android:layout_width="100dip"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/customDiscussButton"
         android:layout_alignBottom="@+id/customDiscussButton"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="16dp" />
+
+    <ImageButton
+        android:id="@+id/customExitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/exit_icon2" />
 
 </RelativeLayout>
