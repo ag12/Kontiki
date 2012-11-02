@@ -55,7 +55,8 @@
             android:layout_below="@android:id/list"
             android:background="@drawable/gradient3"
             android:orientation="vertical"
-            android:paddingTop="15dip" >
+            android:paddingTop="15dip" 
+            android:paddingBottom="5dip">
         </LinearLayout>
     </RelativeLayout>
 
