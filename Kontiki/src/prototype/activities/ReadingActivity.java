@@ -84,6 +84,11 @@ public class ReadingActivity extends Activity {
 
 		TabActivity tabActivity = (TabActivity) ReadingActivity.this
 				.getParent();
+		tabActivity.getTabWidget().getChildAt(0).setVisibility(View.VISIBLE);
+		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.VISIBLE);
+		tabActivity.getTabWidget().getChildAt(2).setVisibility(View.VISIBLE);
+		tabActivity.getTabWidget().getChildAt(3).setVisibility(View.VISIBLE);
+		tabActivity.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 		tabActivity.getTabHost().setCurrentTab(0);
 
 	}

@@ -1,36 +1,156 @@
 package prototype.activities;
 
-import prototype.adapter.KontikiArrayadapter;
+import prototype.adapter.ImageAdapter;
+import prototype.adapter.SocialArrayadapter;
+import prototype.externals.CoverFlow;
 import prototype.start.R;
-import android.app.Activity;
+import android.app.Dialog;
+import android.app.ListActivity;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.method.KeyListener;
-import android.view.KeyEvent;
+import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
-import android.widget.ArrayAdapter;
+import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
-public class SocialActivity extends Activity {
+public class SocialActivity extends ListActivity {
+
+	final private int PUSH_LIST_ELEMENT = 1;
+	private Dialog dialog;
+
+	private Button customExitButton, customStartReadingButton,
+			customDiscussButton;
+	private ImageView discussionImage, newsFeedImage;
+	private OnClickListener newFeedImageClick = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+
+			Toast.makeText(SocialActivity.this, "news feed my ass", 10).show();
+
+		}
+	};
+	private OnClickListener discussionClick = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+
+			Toast.makeText(SocialActivity.this, "discuss", 10).show();
+
+		}
+	};
+	private OnClickListener customExitButtonClick = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+
+			handler.sendEmptyMessage(0);
+
+		}
+	};
+	private OnClickListener customStartReadingClick = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Toast.makeText(SocialActivity.this, "start reading?", 10).show();
+
+		}
+	};
+	private OnClickListener customDiscussClick = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Toast.makeText(SocialActivity.this, "discuss?", 10).show();
+
+		}
+	};
 
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_social);
-		ListView socialListView = (ListView) findViewById(R.id.list2);
-		String[] feeds = new String[] { "The Lord of the Rings",
-				"Harry Potter and the Goblet of Fire",
-				"The Leonardo da Vinci Code", "Teenage Mutant Ninja Turtles",
-				"The Hitchhiker's Guide to the Galaxy",
-				"The Restaurant at the End of the Galaxy",
-				"So Long, and Thanks for the Fish",
-				"Life, the Universe and Everything", "Mostly Harmless",
-				"And Another Thing" };
-		ArrayAdapter<String> socialAdapter = new KontikiArrayadapter(this,
-				feeds, R.layout.row_layout_social, R.drawable.human);
-		socialListView.setAdapter(socialAdapter);
+		ListView socialListView = (ListView) findViewById(android.R.id.list);
+
+		int[] people = new int[] { 1, 2, 3, 4 /* , 5 /* ,6,7,8 */};
+		String[] emptySpaces = { "", "", "", ""/* , ""/* ,"","","" */};
+		SocialArrayadapter arrayadapter = new SocialArrayadapter(this,
+				R.layout.row_layout_social, people, emptySpaces);
+
+		socialListView.setAdapter(arrayadapter);
+
+		newsFeedImage = (ImageView) findViewById(R.id.news_feed_img);
+		discussionImage = (ImageView) findViewById(R.id.discussions_img);
+		newsFeedImage.setOnClickListener(newFeedImageClick);
+		discussionImage.setOnClickListener(discussionClick);
+
+		LinearLayout layout = (LinearLayout) findViewById(R.id.cowerflowLayout);
+
+		CoverFlow coverFlow;
+		coverFlow = new CoverFlow(this);
+
+		ImageAdapter imageAdapter = new ImageAdapter(this);
+
+		coverFlow.setAdapter(imageAdapter);
+
+		coverFlow.setSpacing(-25);
+		coverFlow.setSelection(4, true);
+		coverFlow.setAnimationDuration(1000);
+
+		layout.addView(coverFlow);
+
+	}
+
+	@Override
+	protected void onListItemClick(ListView l, View v, int position, long id) {
+		super.onListItemClick(l, v, position, id);
+		showDialog(PUSH_LIST_ELEMENT);
+	}
+
+	@Override
+	@Deprecated
+	protected Dialog onCreateDialog(int id) {
+
+		dialog = new Dialog(this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.social_push_activity);
+
+		customExitButton = (Button) dialog.findViewById(R.id.customExitButton);
+		customExitButton.setVisibility(View.VISIBLE);
+		customExitButton.setBackgroundColor(Color.TRANSPARENT);
+		customExitButton.setOnClickListener(customExitButtonClick);
+
+		customStartReadingButton = (Button) dialog
+				.findViewById(R.id.customStartReadingButton);
+		customStartReadingButton.setBackgroundColor(Color.TRANSPARENT);
+		customStartReadingButton.setOnClickListener(customStartReadingClick);
+
+		customDiscussButton = (Button) dialog
+				.findViewById(R.id.customDiscussButton);
+		customDiscussButton.setBackgroundColor(Color.TRANSPARENT);
+		customDiscussButton.setOnClickListener(customDiscussClick);
+
+		return dialog;
+	}
+
+	private Handler handler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+
+			super.handleMessage(msg);
+			dialog.dismiss();
+		}
+
+	};
+
+	public void show(String s, int i) {
+		Toast.makeText(this, s + "" + i, 10).show();
 	}
 
 	@Override

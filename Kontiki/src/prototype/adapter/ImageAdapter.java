@@ -1,7 +1,5 @@
 package prototype.adapter;
 
-import java.io.FileInputStream;
-
 import prototype.externals.CoverFlow;
 import prototype.start.R;
 import android.app.Activity;
@@ -27,8 +25,6 @@ public class ImageAdapter extends BaseAdapter {
 	int mGalleryItemBackground;
 	private Context mContext;
 
-	private FileInputStream fis;
-
 	private Integer[] mImageIds = { R.drawable.angels_and_demons,
 			R.drawable.hgttg, R.drawable.hobbit, R.drawable.hp_goblet_fire,
 			R.drawable.hp_phil, R.drawable.hp_prisoner, R.drawable.vinci_code };
@@ -45,10 +41,10 @@ public class ImageAdapter extends BaseAdapter {
 		final int reflectionGap = 4;
 
 		int index = 0;
-		
+
 		for (int imageId : mImageIds) {
-			Bitmap originalImage = BitmapFactory.decodeResource(activity.getResources(),
-					imageId);
+			Bitmap originalImage = BitmapFactory.decodeResource(
+					activity.getResources(), imageId);
 			int width = originalImage.getWidth();
 			int height = originalImage.getHeight();
 

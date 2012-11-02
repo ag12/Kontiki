@@ -4,28 +4,56 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/lightGrey3"
+        android:padding="10dip" >
+
+        <ImageView
+            android:id="@+id/news_feed_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/imageViewBook"
+            android:src="@drawable/news_feed_button" />
+
+        <ImageView
+            android:id="@+id/discussions_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/imageViewBook"
+            android:src="@drawable/discussions_button" />
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/tab1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="62dp" >
+        android:background="@color/lightGrey3"
+        android:orientation="vertical" >
 
-        <TextView 
-            android:id="@+id/textview_newsfeed"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:gravity="center_horizontal"
-            android:text="@string/activity_social_textview"
-            android:textSize="30dp"
-            android:textColor="@color/black"/>
         <ListView
-            android:id="@+id/list2"
+            android:id="@android:id/list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+             >
         </ListView>
-    </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cowerflowLayout"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" 
+            android:layout_below="@android:id/list"
+            android:background="@drawable/gradient3"
+            android:paddingTop="15dip">
+        </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
