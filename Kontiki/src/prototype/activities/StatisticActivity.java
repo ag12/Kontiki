@@ -3,7 +3,6 @@ package prototype.activities;
 import prototype.adapter.KontikiArrayadapter;
 import prototype.helper.Helper;
 import prototype.start.R;
-import android.app.Activity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,7 +20,8 @@ public class StatisticActivity extends ListActivity {
 
 		@Override
 		public void onClick(View v) {
-			Toast.makeText(StatisticActivity.this, "Cool statistics", 10).show();
+			Toast.makeText(StatisticActivity.this, "Cool statistics", 10)
+					.show();
 		}
 	};
 
@@ -44,16 +44,14 @@ public class StatisticActivity extends ListActivity {
 
 		overAllStatisticButton = (Button) findViewById(R.id.button_statistics);
 		overAllStatisticButton.setOnClickListener(oasButtonListener);
-		
-		
+
 	}
-	
+
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Helper.goToHobbitStatistics(StatisticActivity.this);
+		Helper.goToExtendedStatistics(StatisticActivity.this);
 	}
-
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

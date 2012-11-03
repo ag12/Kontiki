@@ -6,7 +6,7 @@ import prototype.activities.HomeFlippedActivity;
 import prototype.activities.ReadingActivity;
 import prototype.activities.SocialActivity;
 import prototype.activities.StatisticActivity;
-import prototype.activities.StatisticsHobbitActivity;
+import prototype.activities.ExtendedStatisticsActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Configuration;
@@ -72,7 +72,7 @@ public class TabHostActivity extends TabActivity {
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
 		
-		intent = new Intent().setClass(this, StatisticsHobbitActivity.class);
+		intent = new Intent().setClass(this, ExtendedStatisticsActivity.class);
 		spec = tabHost
 				.newTabSpec("")
 				.setIndicator("",
