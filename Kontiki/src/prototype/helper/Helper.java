@@ -31,6 +31,7 @@ public class Helper {
 
 	public static void goToHome(Activity activity) {
 		TabActivity tabActivity = (TabActivity) activity.getParent();
+		ShowTabs(tabActivity);
 		tabActivity.getTabHost().setCurrentTab(0);
 	}
 
@@ -39,6 +40,15 @@ public class Helper {
 		tabActivity.getTabHost().setCurrentTab(3);
 	}
 
+	public static void GoToFinishReadingActivity(Activity activity){
+
+		TabActivity tabActivity = (TabActivity) activity.getParent();
+		HideTabs(tabActivity);
+		tabActivity.getTabHost().setCurrentTab(6);
+	}
+	
+	
+	
 	private static void HideTabs(TabActivity tabActivity) {
 		tabActivity.getTabWidget().getChildAt(0).setVisibility(View.GONE);
 		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.GONE);

@@ -3,17 +3,26 @@ package prototype.activities;
 import prototype.helper.Helper;
 import prototype.start.R;
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.TabActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 public class ReadingActivity extends Activity {
 
+	final private int PUSH_FINISH_ELEMENT = 1;
+	private Dialog dialog;
+	private ImageButton likeImageButton, dislikeImageButton, skipImageButton,
+			submitImageButton;
 	private boolean bookMarkPushed, finishBookPushed;
 	private ImageView topBarImage, bookMarkImage, finishBookImage;
 	private OnClickListener topBarImageClick = new OnClickListener() {
@@ -85,12 +94,37 @@ public class ReadingActivity extends Activity {
 
 	public void didFinishBook() {
 
+		TabActivity tabActivity = (TabActivity) this.getParent();
+		tabActivity.getTabHost().setCurrentTab(6);
 	}
+
+	@Override
+	@Deprecated
+	protected Dialog onCreateDialog(int id) {
+
+		dialog = new Dialog(this);
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
+		dialog.setContentView(R.layout.activity_reading_finish_book);
+
+		return dialog;
+	}
+
+	private Handler handler = new Handler() {
+
+		@Override
+		public void handleMessage(Message msg) {
+
+			super.handleMessage(msg);
+			dialog.dismiss();
+		}
+
+	};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_reading_new);
+		setContentView(R.layout.activity_reading);
 
 		bookMarkPushed = false;
 		finishBookPushed = false;

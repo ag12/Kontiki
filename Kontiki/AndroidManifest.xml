@@ -39,6 +39,7 @@
         <activity android:name="prototype.activities.ReadingActivity" >
         </activity>
         <activity android:name="prototype.activities.ExtendedStatisticsActivity"></activity>
+        <activity android:name="prototype.activities.FinishReadingActivity"></activity>
     </application>
 
 </manifest>

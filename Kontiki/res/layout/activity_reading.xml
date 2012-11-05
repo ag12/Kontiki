@@ -1,47 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/text_background"
-    android:orientation="vertical" >
+    android:layout_height="wrap_content"
+    android:background="@drawable/text_background" >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+    <ImageView
+        android:id="@+id/topBarImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="-4dp"
+        android:contentDescription="@string/imageViewBook"
+        android:src="@drawable/top_bar_lotr" />
 
-        <ImageView
-            android:id="@+id/book_header"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/top_bar_lotr" />
+    <ImageView
+        android:id="@+id/bookMarkImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="-20dp"
+        android:layout_marginTop="-8dp"
+        android:contentDescription="@string/imageViewBook"
+        android:src="@drawable/bookmark" />
 
-        <ImageView
-            android:id="@+id/book_bookmark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:src="@drawable/bookmark" />
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bookMarkImage"
+        android:layout_toRightOf="@+id/imageView1" >
 
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:id="@+id/book_text"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="fitXY"
-            android:src="@drawable/lotr_last_page" />
+            android:layout_height="match_parent" >
 
-        <ImageView
-            android:id="@+id/book_finished"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/finish_book" />
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/bookTextlor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:scaleType="matrix"
+                android:src="@drawable/lotr_last_page" />
 
-</LinearLayout>
+            <ImageView
+                android:id="@+id/finishBookImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bookTextlor"
+                android:src="@drawable/finish_book" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

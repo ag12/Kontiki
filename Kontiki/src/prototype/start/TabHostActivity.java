@@ -1,6 +1,7 @@
 package prototype.start;
 
 import prototype.activities.BookStoreActivity;
+import prototype.activities.FinishReadingActivity;
 import prototype.activities.HomeActivity;
 import prototype.activities.HomeFlippedActivity;
 import prototype.activities.ReadingActivity;
@@ -29,7 +30,7 @@ public class TabHostActivity extends TabActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_tab_host_new);
+		setContentView(R.layout.activity_tab_host);
 
 		res = getResources();
 		tabHost = getTabHost();
@@ -71,7 +72,7 @@ public class TabHostActivity extends TabActivity {
 		tabHost.addTab(spec);
 
 		tabHost.getTabWidget().getChildAt(4).setVisibility(View.GONE);
-		
+
 		intent = new Intent().setClass(this, ExtendedStatisticsActivity.class);
 		spec = tabHost
 				.newTabSpec("")
@@ -81,6 +82,16 @@ public class TabHostActivity extends TabActivity {
 		tabHost.addTab(spec);
 
 		tabHost.getTabWidget().getChildAt(5).setVisibility(View.GONE);
+
+		intent = new Intent().setClass(this, FinishReadingActivity.class);
+		spec = tabHost
+				.newTabSpec("")
+				.setIndicator("",
+						res.getDrawable(R.drawable.icon_statistics_press))
+				.setContent(intent);
+		tabHost.addTab(spec);
+
+		tabHost.getTabWidget().getChildAt(6).setVisibility(View.GONE);
 
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
