@@ -95,8 +95,9 @@ public class TabHostActivity extends TabActivity {
 
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
-					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
+					//.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
 																		// 329BD4
+			.setBackgroundResource(R.drawable.gradient2);
 		}
 
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
