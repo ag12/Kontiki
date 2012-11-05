@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -86,6 +87,7 @@ public class FinishReadingActivity extends Activity {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_reading_finish_book);
 
+		
 		likeImageButton = (ImageView) findViewById(R.id.likeImageButton);
 		likeImageButton.setOnClickListener(likeImageButtonClick);
 

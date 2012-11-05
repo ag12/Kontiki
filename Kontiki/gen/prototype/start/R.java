@@ -110,7 +110,6 @@ public final class R {
         public static final int customStartReadingButton=0x7f080017;
         public static final int discussions_img=0x7f08000e;
         public static final int dislikeImageButton=0x7f080009;
-        public static final int editText1=0x7f080007;
         public static final int finishBookImage=0x7f080006;
         public static final int headerLayout=0x7f08000c;
         public static final int icon=0x7f080013;
@@ -130,6 +129,7 @@ public final class R {
         public static final int tab_statistics_hobbit=0x7f080018;
         public static final int textview_statistics=0x7f080010;
         public static final int topBarImage=0x7f080001;
+        public static final int variableEditText=0x7f080007;
     }
     public static final class layout {
         public static final int activity_bookstore=0x7f030000;
