@@ -231,9 +231,9 @@ public class HomeActivity extends ListActivity {
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 
-		Intent flipped = new Intent(this, HomeFlippedActivity.class);
-		flipped.putExtra("flipped", true);
-		startActivity(flipped);
+//		Intent flipped = new Intent(this, HomeFlippedActivity.class);
+//		flipped.putExtra("flipped", true);
+//		startActivity(flipped);
 
 	}
 }
