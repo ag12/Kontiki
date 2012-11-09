@@ -98,8 +98,8 @@ public class SocialActivity extends ListActivity {
 		setContentView(R.layout.activity_social);
 		ListView socialListView = (ListView) findViewById(android.R.id.list);
 
-		int[] people = new int[] { 1, 2, 3, 4, 5 /* ,6,7,8 */};
-		String[] emptySpaces = { "", "", "", "", ""/* ,"","","" */};
+		int[] people = new int[] { 1, 2, 3, 4 /* , 5 /* ,6,7,8 */};
+		String[] emptySpaces = { "", "", "", ""/* , ""/* ,"","","" */};
 		SocialArrayadapter arrayadapter = new SocialArrayadapter(this,
 				R.layout.row_layout_social, people, emptySpaces);
 

@@ -6,6 +6,7 @@ import prototype.activities.HomeActivity;
 import prototype.activities.HomeFlippedActivity;
 import prototype.activities.ReadingActivity;
 import prototype.activities.SocialActivity;
+import prototype.activities.SocialActivity_Rev2;
 import prototype.activities.StatisticActivity;
 import prototype.activities.ExtendedStatisticsActivity;
 import android.app.TabActivity;
@@ -48,7 +49,7 @@ public class TabHostActivity extends TabActivity {
 				.setContent(intent);
 		tabHost.addTab(spec);
 
-		intent = new Intent().setClass(this, SocialActivity.class);
+		intent = new Intent().setClass(this, /*SocialActivity.class*/ SocialActivity_Rev2.class);
 		spec = tabHost
 				.newTabSpec("")
 				.setIndicator("", res.getDrawable(R.drawable.icon_social_press))
@@ -95,9 +96,9 @@ public class TabHostActivity extends TabActivity {
 
 		for (int i = 0; i < tabHost.getTabWidget().getChildCount(); i++) {
 			tabHost.getTabWidget().getChildAt(i)
-					//.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
+					.setBackgroundColor(Color.parseColor("#3BB9FF")); // unselected287EAC
 																		// 329BD4
-			.setBackgroundResource(R.drawable.gradient2);
+			//.setBackgroundResource(R.drawable.gradient2);
 		}
 
 		tabHost.setCurrentTab(tabHost.getCurrentTab());
