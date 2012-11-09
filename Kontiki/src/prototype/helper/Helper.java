@@ -13,6 +13,12 @@ public class Helper {
 		tabActivity.getTabHost().setCurrentTab(4);
 
 	}
+	public static void GoToStoreView(Activity activity) {
+
+		TabActivity tabActivity = (TabActivity) activity.getParent();
+		tabActivity.getTabHost().setCurrentTab(1);
+
+	}
 
 	public static void ShowMainActivityAndSetCurrentTab(Activity activity,
 			int currentTab) {

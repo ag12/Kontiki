@@ -5,8 +5,6 @@ import prototype.helper.Helper;
 import prototype.start.R;
 import android.app.Dialog;
 import android.app.ListActivity;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -22,15 +19,14 @@ import android.widget.Toast;
 public class SocialActivity_Rev2 extends ListActivity {
 
 	private int id = 0;
-	private Button customExitButton, customStartReadingButton,
-			customDiscussButton;
 	final private int PUSH_LIST_ELEMENT = 1;
 	private Dialog dialog;
 	private SocialArrayadapter_Rev2 arrayadapter;
 	private ListView socialListView;
 	private boolean activityTabIsPushed, discussTabIsPushed = false;
 	private ImageView activityImageView, discussionImageView,
-			subMenuLefImageView, subMenuAddFriendImageView;
+			subMenuLefImageView, subMenuAddFriendImageView, popupExitImageView,
+			popupBuyImageView, popupDiscusImageView;
 	private OnClickListener activityImageViewClick = new OnClickListener() {
 
 		@Override
@@ -76,7 +72,6 @@ public class SocialActivity_Rev2 extends ListActivity {
 
 					@Override
 					public void run() {
-						// TODO Auto-generated method stub
 
 					}
 				}, 250);
@@ -105,23 +100,9 @@ public class SocialActivity_Rev2 extends ListActivity {
 
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
-
 					subMenuLefImageView.setImageResource(id);
 				}
 			}, 350);
-
-			/*
-			 * else if (leftMenuIsPushed) { subMenuLefImageView
-			 * .setImageResource(R.drawable.sub_menu_add_favorites);
-			 * leftMenuIsPushed = false;
-			 * 
-			 * new Handler().postDelayed(new Runnable() {
-			 * 
-			 * @Override public void run() { // TODO Auto-generated method stub
-			 * 
-			 * } }, 250); return; }
-			 */
 		}
 	};
 	private OnClickListener subMenuAddFriendImageViewClick = new OnClickListener() {
@@ -136,26 +117,12 @@ public class SocialActivity_Rev2 extends ListActivity {
 
 				@Override
 				public void run() {
-					// TODO Auto-generated method stub
 
 					subMenuAddFriendImageView
 							.setImageResource(R.drawable.sub_menu_add_friend);
 
 				}
 			}, 350);
-
-			/*
-			 * else if (addFeriendIsPushed) { subMenuAddFriendImageView
-			 * .setImageResource(R.drawable.sub_menu_add_friend);
-			 * addFeriendIsPushed = false;
-			 * 
-			 * new Handler().postDelayed(new Runnable() {
-			 * 
-			 * @Override public void run() { // TODO Auto-generated method stub
-			 * 
-			 * } }, 250); return; }
-			 */
-
 		}
 	};
 	private OnClickListener customExitButtonClick = new OnClickListener() {
@@ -171,22 +138,16 @@ public class SocialActivity_Rev2 extends ListActivity {
 
 		@Override
 		public void onClick(View v) {
+			popupBuyImageView.setImageResource(R.drawable.buy_book_pushed);
 
-			// handler.sendEmptyMessage(0);
-			// new Handler().postDelayed(new Runnable() {
+			new Handler().postDelayed(new Runnable() {
 
-			// @Override
-			// public void run() {
+				@Override
+				public void run() {
 
-			SharedPreferences myPrefs = SocialActivity_Rev2.this
-					.getSharedPreferences("myPrefs", MODE_WORLD_READABLE);
-			SharedPreferences.Editor prefsEditor = myPrefs.edit();
-			prefsEditor.putInt("curentTab", 2);
-			prefsEditor.commit();
-			Helper.GoToBookReadingView(SocialActivity_Rev2.this);
-
-			// }
-			// }, 250);
+					Helper.GoToStoreView(SocialActivity_Rev2.this);
+				}
+			}, 250);
 
 		}
 	};
@@ -194,7 +155,19 @@ public class SocialActivity_Rev2 extends ListActivity {
 
 		@Override
 		public void onClick(View v) {
-			Toast.makeText(SocialActivity_Rev2.this, "discuss?", 10).show();
+
+			popupDiscusImageView
+					.setImageResource(R.drawable.discuss_pop_pushed);
+
+			new Handler().postDelayed(new Runnable() {
+
+				@Override
+				public void run() {
+
+					popupDiscusImageView
+							.setImageResource(R.drawable.discuss_pop);
+				}
+			}, 250);
 
 		}
 	};
@@ -236,25 +209,19 @@ public class SocialActivity_Rev2 extends ListActivity {
 		dialog = new Dialog(this);
 		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-		// IF USING BUTTONS
-		dialog.setContentView(R.layout.social_push_activity);
-		customExitButton = (Button) dialog.findViewById(R.id.customExitButton);
-		customExitButton.setVisibility(View.VISIBLE);
-		customExitButton.setBackgroundColor(Color.TRANSPARENT);
-		customExitButton.setOnClickListener(customExitButtonClick);
+		dialog.setContentView(R.layout.social_popup_activity_window_rev2);
 
-		customStartReadingButton = (Button) dialog
-				.findViewById(R.id.customStartReadingButton);
-		customStartReadingButton.setVisibility(View.VISIBLE);
-		customStartReadingButton.setBackgroundColor(Color.TRANSPARENT);
-		customStartReadingButton.setOnClickListener(customStartReadingClick);
+		popupExitImageView = (ImageView) dialog
+				.findViewById(R.id.close_imageView);
 
-		customDiscussButton = (Button) dialog
-				.findViewById(R.id.customDiscussButton);
-		customDiscussButton.setVisibility(View.VISIBLE);
-		customDiscussButton.setBackgroundColor(Color.TRANSPARENT);
-		customDiscussButton.setOnClickListener(customDiscussClick);
+		popupExitImageView.setOnClickListener(customExitButtonClick);
 
+		popupBuyImageView = (ImageView) dialog.findViewById(R.id.buy_imageView);
+		popupBuyImageView.setOnClickListener(customStartReadingClick);
+
+		popupDiscusImageView = (ImageView) dialog
+				.findViewById(R.id.discuss_pop_imageView);
+		popupDiscusImageView.setOnClickListener(customDiscussClick);
 		return dialog;
 	}
 
@@ -281,7 +248,7 @@ public class SocialActivity_Rev2 extends ListActivity {
 	}
 
 	private void SwapToActivity() {
-		
+
 		subMenuLefImageView.setImageResource(R.drawable.sub_menu_add_favorites);
 	}
 

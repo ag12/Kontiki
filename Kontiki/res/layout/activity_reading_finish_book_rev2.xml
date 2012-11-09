@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/finish_reading_bg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:paddingTop="35dp" >
+
+        <!-- For emulator sett   android:layout_height="225dp" -->
+        <!-- For htc device   android:layout_height="285dp" -->
+
+        <EditText
+            android:id="@+id/variableEditText"
+            android:layout_width="match_parent"
+            android:layout_height="285dp"
+            android:background="@drawable/textbox_bg"
+            android:ems="10"
+            android:inputType="textMultiLine" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+    <ScrollView
+        android:id="@+id/mainScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp" >
+
+        <ImageView
+            android:id="@+id/likeImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/imageViewBook"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:src="@drawable/like" />
+
+        <ImageView
+            android:id="@+id/dislikeImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:contentDescription="@string/imageViewBook"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:src="@drawable/dislike" />
+
+        <ImageView
+            android:id="@+id/skipImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:contentDescription="@string/imageViewBook"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:src="@drawable/skip" />
+
+        <ImageView
+            android:id="@+id/submitImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/imageViewBook"
+            android:paddingBottom="0dp"
+            android:paddingTop="0dp"
+            android:src="@drawable/submit" />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>
