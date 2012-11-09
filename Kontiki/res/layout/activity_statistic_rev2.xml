@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/headLayoutst"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/buttonLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/books_imageView"
+            android:layout_width="162dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/imageViewBook"
+            android:src="@drawable/books" />
+
+        <ImageView
+            android:id="@+id/total_imageView"
+            android:layout_width="162dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/imageViewBook"
+            android:src="@drawable/total_pushed" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/mainScroll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/year_stats_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/imageViewBook"
+                android:scaleType="fitXY"
+                android:src="@drawable/year_stats" />
+
+            <ImageView
+                android:id="@+id/overall_stats_imgeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/year_stats_imageView"
+                android:contentDescription="@string/imageViewBook"
+                android:scaleType="fitXY"
+                android:src="@drawable/overall_stats" />
+
+            <ImageView
+                android:id="@+id/genre_stats_imgeView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/overall_stats_imgeView"
+                android:contentDescription="@string/imageViewBook"
+                android:scaleType="fitXY"
+                android:src="@drawable/genre_stats" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutStat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/submenubg"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/background" >
+        </ListView>
+    </RelativeLayout>
+
+</LinearLayout>
