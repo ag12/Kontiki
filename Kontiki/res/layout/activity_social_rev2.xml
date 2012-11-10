@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
+        <!-- USE  android:layout_width="162dip" for emulatur -->
         <ImageView
             android:id="@+id/activity_feed_imageView"
-            android:layout_width="162dip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -23,7 +24,7 @@
 
         <ImageView
             android:id="@+id/discussion_board_imageView"
-            android:layout_width="162dip"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
