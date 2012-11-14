@@ -15,6 +15,7 @@ public class ExtendedStatisticsActivity extends Activity {
 	private ImageView backButton;
 	private ImageView shareButton;
 
+	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.statistics_hobbit_layout);

@@ -108,6 +108,7 @@ public class HomeActivity extends ListActivity {
 						.getSharedPreferences("myPrefs", MODE_WORLD_READABLE);
 				SharedPreferences.Editor prefsEditor = myPrefs.edit();
 				prefsEditor.putInt("curentTab", 0);
+				prefsEditor.putInt("lastInt", lastInt);
 				prefsEditor.commit();
 				new Helper().GoToBookReadingView(HomeActivity.this);
 

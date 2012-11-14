@@ -136,6 +136,14 @@ public class ReadingActivity extends Activity {
 		topBarImage.setOnClickListener(topBarImageClick);
 		bookMarkImage.setOnClickListener(bookMarkImageClick);
 		finishBookImage.setOnClickListener(finishBookImageClick);
+		SharedPreferences myPrefs = ReadingActivity.this
+				.getSharedPreferences("myPrefs",
+						MODE_WORLD_READABLE);
+		int book = myPrefs.getInt("lastInt", -1);
+		if( book != 2 ){
+			finishBookImage.setVisibility(View.GONE);
+		}
+		
 
 	}
 

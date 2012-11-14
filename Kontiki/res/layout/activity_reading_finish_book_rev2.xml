@@ -19,7 +19,7 @@
         <EditText
             android:id="@+id/variableEditText"
             android:layout_width="match_parent"
-            android:layout_height="285dp"
+            android:layout_height="275dp"
             android:background="@drawable/textbox_bg"
             android:ems="10"
             android:inputType="textMultiLine" >
@@ -30,41 +30,33 @@
     <ScrollView
         android:id="@+id/mainScroll"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingLeft="8dp"
-        android:paddingRight="8dp" >
+   >
 
         <ImageView
             android:id="@+id/likeImageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/imageViewBook"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
+            android:contentDescription="@string/imageViewBook"     
             android:src="@drawable/like" />
 
         <ImageView
             android:id="@+id/dislikeImageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
-            android:contentDescription="@string/imageViewBook"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"         
+            android:contentDescription="@string/imageViewBook"     
             android:src="@drawable/dislike" />
 
         <ImageView
             android:id="@+id/skipImageButton"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
-            android:contentDescription="@string/imageViewBook"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
+            android:contentDescription="@string/imageViewBook"        
             android:src="@drawable/skip" />
 
         <ImageView
@@ -72,8 +64,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/imageViewBook"
-            android:paddingBottom="0dp"
-            android:paddingTop="0dp"
             android:src="@drawable/submit" />
     </LinearLayout>
     </ScrollView>

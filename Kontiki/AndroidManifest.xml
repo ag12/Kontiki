@@ -42,6 +42,7 @@
         <activity android:name="prototype.activities.FinishReadingActivity"></activity>
         <activity android:name="prototype.activities.SocialActivity_Rev2"></activity>
         <activity android:name="prototype.activities.StatisticActivity_Rev2"></activity>
+        <activity android:name="prototype.activities.StartActivity"></activity>
     </application>
 
 </manifest>

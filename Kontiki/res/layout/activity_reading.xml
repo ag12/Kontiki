@@ -27,7 +27,7 @@
 
     <ScrollView
         android:id="@+id/scrollView1"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bookMarkImage"
         android:layout_toRightOf="@+id/imageView1" >
@@ -47,7 +47,7 @@
 
             <ImageView
                 android:id="@+id/finishBookImage"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/bookTextlor"
                 android:src="@drawable/finish_book" />
