@@ -2,8 +2,12 @@ package prototype.helper;
 
 import android.app.Activity;
 import android.app.TabActivity;
+import android.content.Context;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 
+@SuppressWarnings("deprecation")
 public class Helper {
 
 	public static void GoToBookReadingView(Activity activity) {
@@ -13,6 +17,7 @@ public class Helper {
 		tabActivity.getTabHost().setCurrentTab(4);
 
 	}
+
 	public static void GoToStoreView(Activity activity) {
 
 		TabActivity tabActivity = (TabActivity) activity.getParent();
@@ -30,6 +35,7 @@ public class Helper {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public static void goToExtendedStatistics(Activity activity) {
 		TabActivity tabActivity = (TabActivity) activity.getParent();
 		tabActivity.getTabHost().setCurrentTab(5);
@@ -65,6 +71,19 @@ public class Helper {
 		tabActivity.getTabWidget().getChildAt(1).setVisibility(View.VISIBLE);
 		tabActivity.getTabWidget().getChildAt(2).setVisibility(View.VISIBLE);
 		tabActivity.getTabWidget().getChildAt(3).setVisibility(View.VISIBLE);
+	}
+
+	public static Animation PlayAnim(View v, Context Con, int animationid,
+			int StartOffset) {
+		if (v != null) {
+			Animation animation = AnimationUtils
+					.loadAnimation(Con, animationid);
+			animation.setStartOffset(StartOffset);
+			v.startAnimation(animation);
+
+			return animation;
+		}
+		return null;
 	}
 
 }

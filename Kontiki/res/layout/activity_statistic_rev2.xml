@@ -12,7 +12,7 @@
   <!-- USE  android:layout_width="162dip" for emulatur -->
         <ImageView
             android:id="@+id/books_imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="161dip"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
@@ -21,7 +21,7 @@
 
         <ImageView
             android:id="@+id/total_imageView"
-            android:layout_width="wrap_content"
+            android:layout_width="161dip"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"

@@ -5,12 +5,13 @@
 
     <translate
         android:duration="500"
-        android:fromYDelta="100%p"
-        android:toYDelta="0%p" />
+        android:fromYDelta="0%p"
+        android:toYDelta="100%p" />
 
     <alpha
-        android:duration="400"
-        android:fromAlpha="0.0"
-        android:toAlpha="1.0" />
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:duration="500"
+        android:fromAlpha="1.0"
+        android:toAlpha="0.0" />
 
 </set>

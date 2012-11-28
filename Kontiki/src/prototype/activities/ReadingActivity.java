@@ -25,12 +25,13 @@ public class ReadingActivity extends Activity {
 			submitImageButton;
 	private boolean bookMarkPushed, finishBookPushed;
 	private ImageView topBarImage, bookMarkImage, finishBookImage;
+	private int book = 0;
 	private OnClickListener topBarImageClick = new OnClickListener() {
 
 		@Override
 		public void onClick(View v) {
 
-			Toast.makeText(ReadingActivity.this, "TopBar Push", 10).show();
+			//Toast.makeText(ReadingActivity.this, "TopBar Push", 10).show();
 
 		}
 	};
@@ -61,6 +62,8 @@ public class ReadingActivity extends Activity {
 					int tab = myPrefs.getInt("curentTab", 0);
 					new Helper().ShowMainActivityAndSetCurrentTab(
 							ReadingActivity.this, tab);
+					bookMarkImage.setImageResource(R.drawable.bookmark);
+					bookMarkPushed = false;
 
 				}
 			}, 250);
@@ -124,8 +127,25 @@ public class ReadingActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_reading);
+		SetUp();
+	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_tab_host, menu);
+		return true;
+	}
+
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+		SetUp();
+
+	}
+
+	private void SetUp() {
+		setContentView(R.layout.activity_reading);
 		bookMarkPushed = false;
 		finishBookPushed = false;
 		topBarImage = (ImageView) findViewById(R.id.topBarImage);
@@ -136,21 +156,48 @@ public class ReadingActivity extends Activity {
 		topBarImage.setOnClickListener(topBarImageClick);
 		bookMarkImage.setOnClickListener(bookMarkImageClick);
 		finishBookImage.setOnClickListener(finishBookImageClick);
-		SharedPreferences myPrefs = ReadingActivity.this
-				.getSharedPreferences("myPrefs",
-						MODE_WORLD_READABLE);
-		int book = myPrefs.getInt("lastInt", -1);
-		if( book != 2 ){
+		SharedPreferences myPrefs = ReadingActivity.this.getSharedPreferences(
+				"myPrefs", MODE_WORLD_READABLE);
+		book = myPrefs.getInt("lastInt", -1);
+		if (book != 2) {
+			// Toast.makeText(this, "!=2 : " + book, 10).show();
 			finishBookImage.setVisibility(View.GONE);
+			SharedPreferences.Editor prefsEditor = myPrefs.edit();
+			prefsEditor.putInt("lastInt", book);
+			prefsEditor.commit();
 		}
-		
+		if (book == 2) {
+
+			// Toast.makeText(this, "==2 : " + book, 10).show();
+			SharedPreferences.Editor prefsEditor = myPrefs.edit();
+			prefsEditor.putInt("lastInt", 0);
+			prefsEditor.commit();
+			finishBookImage.setVisibility(View.VISIBLE);
+		}
+		book = 0;
 
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_tab_host, menu);
-		return true;
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		// Toast.makeText(this, "restart", 10).show();
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		super.onResume();
+		// Toast.makeText(this, "resume", 10).show();
+		SetUp();
+	}
+
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		// Toast.makeText(this, "stop", 10).show();
 	}
 
 }

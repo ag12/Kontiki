@@ -7,9 +7,11 @@ import prototype.activities.HomeActivity;
 import prototype.activities.ReadingActivity;
 import prototype.activities.SocialActivity_Rev2;
 import prototype.activities.StatisticActivity_Rev2;
+import prototype.helper.Helper;
 import android.app.TabActivity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
@@ -23,6 +25,7 @@ import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
+import android.widget.Toast;
 
 @SuppressWarnings("deprecation")
 public class TabHostActivity extends TabActivity {
@@ -39,24 +42,57 @@ public class TabHostActivity extends TabActivity {
 		@Override
 		public void onTabChanged(String tabId) {
 
-			Log.d("Tabhost", tabId);
 			View currentView = tabHost.getCurrentView();
 			int c = tabHost.getCurrentTab();
-			if (c > currentC && c != 4) {
 
-				PlayAnim(currentV, getBaseContext(), R.anim.slide_out_left, 200);
-				PlayAnim(currentView, getBaseContext(), R.anim.slide_in_right,
-						200);
+			if ( tabId.equals("h") && (c-currentC==0)){
+				Log.d("HHHHHHHHHHHHHHHHHHHHHHHHHH",  c + " C:" + currentC);
+				return;
+			}
+			
+			
+			else	if (((currentC - c) == 4) /*|| ((currentC - c) == 6)*/) {
+
+			
+				/*tabHost.setCurrentTab(0);
+				Helper.PlayAnim(currentV, getBaseContext(),
+						R.anim.slide_out_down, 200);
+				
+			   Helper.PlayAnim(currentView, getBaseContext(),
+						R.anim.slide_in_down, 200);*/
+			}
+
+			else if (c > currentC && c != 4) {
+
+				Helper.PlayAnim(currentV, getBaseContext(),
+						R.anim.slide_out_left, 200);
+				Helper.PlayAnim(currentView, getBaseContext(),
+						R.anim.slide_in_right, 200);
+				Log.d("c > currentC && c != 4", "c: " + c + " C:" + currentC);
 
 			} else if (c < currentC && c != 4) {
 
-				PlayAnim(currentV, getBaseContext(), R.anim.slide_out_right, 200);
-				PlayAnim(currentView, getBaseContext(), R.anim.slide_in_left, 200);
+				Helper.PlayAnim(currentV, getBaseContext(),
+						R.anim.slide_out_right, 200);
+				Helper.PlayAnim(currentView, getBaseContext(),
+						R.anim.slide_in_left, 200);
+				Log.d("c < currentC && c != 4", "c: " + c + ", C" + currentC);
 
+			} else if (c == 4) {
+
+				/*tabHost.setCurrentTab(4);
+				Helper.PlayAnim(currentV, getBaseContext(),
+						R.anim.slide_out_to_up, 200);
+				Helper.PlayAnim(currentView, getBaseContext(),
+						R.anim.slide_in_form_down, 200);
+				Log.d("C==4", "10" + "c: " + c + " C:" + currentC);*/
+
+			} else if (c == currentC) {
+				Log.d("c==C", "10" + "c: " + c + " C:" + currentC);
 			}
 			currentC = c;
 			currentV = currentView;
-			Log.d("Tabhost", "ID:" + ",c:" + c + "," + tabId);
+		
 
 		}
 	};
@@ -73,7 +109,7 @@ public class TabHostActivity extends TabActivity {
 
 		intent = new Intent().setClass(this, HomeActivity.class);
 
-		spec = tabHost.newTabSpec("")
+		spec = tabHost.newTabSpec("h")
 				.setIndicator("", res.getDrawable(R.drawable.icon_home_press))
 				.setContent(intent);
 		tabHost.addTab(spec);
@@ -198,4 +234,5 @@ public class TabHostActivity extends TabActivity {
 		getMenuInflater().inflate(R.menu.activity_tab_host, menu);
 		return true;
 	}
+	
 }

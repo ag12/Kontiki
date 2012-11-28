@@ -99,7 +99,7 @@ public class HomeActivity extends ListActivity {
 			break;
 		}
 		lastImage = imageView;
-
+		
 		new Handler().postDelayed(new Runnable() {
 
 			@Override
@@ -111,6 +111,33 @@ public class HomeActivity extends ListActivity {
 				prefsEditor.putInt("lastInt", lastInt);
 				prefsEditor.commit();
 				new Helper().GoToBookReadingView(HomeActivity.this);
+				if (lastImage != null ) {
+
+					
+					switch (lastInt) {
+					case 0:
+
+						lastImage.setImageResource(R.drawable.angels_and_deamons);
+						break;
+					case 1:
+
+						lastImage.setImageResource(R.drawable.hobbit);
+						break;
+					case 2:
+
+						lastImage.setImageResource(R.drawable.lotr);
+						break;
+					case 3:
+
+						lastImage.setImageResource(R.drawable.lotr2);
+						break;
+					case 4:
+						lastImage.setImageResource(R.drawable.hobbit);
+						break;
+					default:
+						break;
+					}
+				}
 
 			}
 		}, 250);
@@ -232,9 +259,9 @@ public class HomeActivity extends ListActivity {
 	public void onConfigurationChanged(Configuration newConfig) {
 		super.onConfigurationChanged(newConfig);
 
-//		Intent flipped = new Intent(this, HomeFlippedActivity.class);
-//		flipped.putExtra("flipped", true);
-//		startActivity(flipped);
+		// Intent flipped = new Intent(this, HomeFlippedActivity.class);
+		// flipped.putExtra("flipped", true);
+		// startActivity(flipped);
 
 	}
 }
